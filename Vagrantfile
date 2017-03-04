@@ -17,10 +17,10 @@ Vagrant.configure(2) do |config|
     d.vm.hostname =  "vip-win2k12-01"
     d.vm.network "public_network", bridge: "eno4", ip: "192.168.57.77", auto_config: "false", netmask: "255.255.255.0" , gateway: "192.168.57.1"
     default_router = "192.168.57.1"
-    $defauldgw = "192.168.57.1"
-    $InterfaceIp="192.168.57.77" 
+    defauldgw = "192.168.57.1"
+    interfaceIp ="192.168.57.77" 
     # change/ensure the default route via the local network's WAN router, useful for public_network/bridged mode
-    d.vm.provision :shell, inline: "(Get-WmiObject Win32_NetworkAdapterConfiguration | ?{$_.IPAddress -eq $InterfaceIp} ).SetGateways($defauldgw)"
+    d.vm.provision :shell, inline: "(Get-WmiObject Win32_NetworkAdapterConfiguration | ?{$_.IPAddress -eq #{interfaceIp} } ).SetGateways( #{defauldgw} )"
     d.vm.provider "virtualbox" do |vb|
       # Don't boot with headless mode
       vb.gui = false

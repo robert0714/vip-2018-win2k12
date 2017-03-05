@@ -28,6 +28,7 @@ Vagrant.configure(2) do |config|
       # Use VBoxManage to customize the VM. For example to change memory:
       vb.customize ["modifyvm", :id, "--memory", "8192"]
       vb.customize ["modifyvm", :id, "--cpus",   "2"]
+      vb.memory = 8192
     end
    end
    config.vm.define "vip-win2k12-02" do |d| 
@@ -46,6 +47,7 @@ Vagrant.configure(2) do |config|
       # Use VBoxManage to customize the VM. For example to change memory:
       vb.customize ["modifyvm", :id, "--memory", "8192"]
       vb.customize ["modifyvm", :id, "--cpus",   "2"]
+      vb.memory = 8192
     end
    end
    if Vagrant.has_plugin?("vagrant-cachier")

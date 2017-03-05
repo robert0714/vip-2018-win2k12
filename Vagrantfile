@@ -19,7 +19,7 @@ Vagrant.configure(2) do |config|
     default_router = "192.168.57.1"
     # change/ensure the default route via the local network's WAN router, useful for public_network/bridged mode
     d.vm.provision :shell, inline: "netsh int ip set address 'Ethernet 2' address=192.168.57.77 mask=255.255.255.0 gateway=192.168.57.1"
-    d.vm.provision :shell, inline: "net user jboss jboss /ADD"
+    d.vm.provision :shell, inline: "net user jboss  abc!123  /ADD"
     d.vm.provision :shell, inline: "net localgroup administrators jboss /add"
     #netsh int ip set address 'Ethernet 2' address=192.168.57.77 mask=255.255.255.0 gateway=192.168.57.1
     d.vm.provider "virtualbox" do |vb|
@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
     default_router = "192.168.57.1"
     # change/ensure the default route via the local network's WAN router, useful for public_network/bridged mode
     d.vm.provision :shell, inline: "netsh int ip set address 'Ethernet 2' address=192.168.57.78 mask=255.255.255.0 gateway=192.168.57.1"
-    d.vm.provision :shell, inline: "net user jboss jboss /ADD"
+    d.vm.provision :shell, inline: "net user jboss  abc!123  /ADD"
     d.vm.provision :shell, inline: "net localgroup administrators jboss /add"
     #netsh int ip set address 'Ethernet 2' address=192.168.57.77 mask=255.255.255.0 gateway=192.168.57.1
     d.vm.provider "virtualbox" do |vb|

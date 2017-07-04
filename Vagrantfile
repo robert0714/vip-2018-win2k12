@@ -15,7 +15,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "vip-win2k12-01" do |d| 
     d.vm.box = "opentable/win-2012r2-standard-amd64-nocm"
     d.vm.hostname =  "vip-win2k12-01"
-    d.vm.network "public_network", bridge: "eno4", ip: "192.168.57.77", auto_config: "false", netmask: "255.255.255.0" , gateway: "192.168.57.1"
+    d.vm.network "public_network", bridge: "eno4", ip: "192.168.57.60", auto_config: "false", netmask: "255.255.255.0" , gateway: "192.168.57.1"
     default_router = "192.168.57.1"
     # change/ensure the default route via the local network's WAN router, useful for public_network/bridged mode
     d.vm.provision :shell, inline: "netsh int ip set address 'Ethernet 2' address=192.168.57.77 mask=255.255.255.0 gateway=192.168.57.1"
@@ -34,7 +34,7 @@ Vagrant.configure(2) do |config|
    config.vm.define "vip-win2k12-02" do |d| 
     d.vm.box = "opentable/win-2012r2-standard-amd64-nocm"
     d.vm.hostname =  "vip-win2k12-02"
-    d.vm.network "public_network", bridge: "eno4", ip: "192.168.57.78", auto_config: "false", netmask: "255.255.255.0" , gateway: "192.168.57.1"
+    d.vm.network "public_network", bridge: "eno4", ip: "192.168.57.61", auto_config: "false", netmask: "255.255.255.0" , gateway: "192.168.57.1"
     default_router = "192.168.57.1"
     # change/ensure the default route via the local network's WAN router, useful for public_network/bridged mode
     d.vm.provision :shell, inline: "netsh int ip set address 'Ethernet 2' address=192.168.57.78 mask=255.255.255.0 gateway=192.168.57.1"
